@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+	<!-- 全局国际化配置 -->
+	<constant name="struts.custom.i18n.resources" value="messages"></constant>
+
+	<package name="basicstruts2" extends="struts-default">
+		<action name="index">
+			<result>/index.jsp</result>
+		</action>
+		
+		<!-- 员工操作 -->
+		<action name="user_*" class="org.kw.user.web.action.UserAction" method="{1}">
+			<result name="loginINPUT">/login/login.jsp</result>
+			<result name="loginSUCCESS">/login/home.jsp</result>
+			<result name="addINPUT">/user/add.jsp</result>
+			<result name="addSUCCESS" type="redirectAction">user_list</result>
+			<result name="listSUCCESS">/user/list.jsp</result>
+			<result name="deleteSUCCESS" type="redirectAction">user_list</result>
+		</action>
+	</package>
+
+</struts>
