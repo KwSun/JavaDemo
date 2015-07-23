@@ -22,6 +22,7 @@
 		<!-- 是路径结构，而不是包结构 -->
 		<mapper resource="cn/microvideo/domain/userMapper.xml" />
 		<mapper resource="cn/microvideo/domain/orderMapper.xml" />
+		<mapper resource="cn/microvideo/domain/classMapper.xml" />
 		<mapper class="cn.microvideo.service.UserMapper" />
 	</mappers>
 </configuration>
