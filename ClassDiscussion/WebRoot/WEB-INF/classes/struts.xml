@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+ <constant name="struts.i18n.encoding" value="utf-8"></constant>
+ 
+ <package name="struts2" extends="struts-default">
+  
+
+   <action name="login" class="com.test.action.LoginAction">
+   <result name="success">/admin_main.jsp</result>
+    <result name="input">/adminlogin.jsp</result>
+   </action>
+   
+   <action name="studentlogin" class="com.test.action.StudentLoginAction">
+   <result name="success">/index.jsp</result>
+   <result name="input">/login.jsp</result>
+   </action>
+   
+    <action name="modifyinfo" class="com.test.action.StudentLoginAction" method="modifyinfo">
+   <result name="success">/msg.jsp</result>
+   <result name="error">/msg.jsp</result>
+    <result name="input">/MyInfo.jsp</result>
+   </action>
+   
+   <action name="logOut" class="com.test.action.StudentLoginAction" method="logOut">
+   <result name="success">/login.jsp</result>
+   <result name="error">/login.jsp</result>
+   </action>
+   
+   <action name="addStudent" class="com.test.action.StudentLoginAction" method="addStudent">
+   <result name="success">/msg_a.jsp</result>
+   <result name="error">/msg_a.jsp</result>
+   </action>
+  
+   <action name="showPhoto" class="com.test.action.PhotoAction" method="getPhotosList">
+   <result name="success">/showPhotos.jsp</result>
+   <result name="error">/msg.jsp</result>
+   </action>
+   <action name="showinfolist" class="com.test.action.InfoAction" method="showInfoList">
+   <result name="success">/showInfoList.jsp</result>
+   <result name="error">/msg.jsp</result>
+   </action>
+   <action name="deleteInfo" class="com.test.action.InfoAction" method="deleteInfo">
+   <result name="success">/msg.jsp</result>
+   <result name="error">/msg.jsp</result>
+   </action>
+   <action name="showInfo" class="com.test.action.InfoAction" method="showInfo">
+   <result name="success">/info.jsp</result>
+   <result name="error">/msg.jsp</result>
+   </action>
+   
+   <action name="adminAddInfo" class="com.test.action.InfoAction" method="adminAddInfo">
+   <result name="success">/msg_a.jsp</result>
+   <result name="error">/msg_a.jsp</result>
+   <result name="login">/adminlogin.jsp</result>
+   </action>
+   
+   <action name="addClassInfo" class="com.test.action.InfoAction" method="addClassInfo">
+   <result name="success">/msg_a.jsp</result>
+   <result name="error">/msg_a.jsp</result>
+   <result name="login">/adminlogin.jsp</result>
+   </action>
+  
+    <action name="showstudentlist" class="com.test.action.StudentInfoAction" method="showStudentList">
+   <result name="success">/showClassmate.jsp</result>
+   <result name="error">/msg.jsp</result>
+   </action>
+   
+   <action name="showStudentInfo" class="com.test.action.StudentInfoAction" method="showStudentInfo">
+   <result name="success">/studentInfo.jsp</result>
+   <result name="error">/msg.jsp</result>
+   <result name="input">/msg.jsp</result>
+   </action>
+   
+   <action name="showmsg" class="com.test.action.MessageAction" method="showMyInfo">
+   <result name="success">/Mymessage.jsp</result>
+   <result name="error">/msg.jsp</result>
+   <result name="input">/msg.jsp</result>
+   </action>
+   <action name="addmsg" class="com.test.action.MessageAction" method="addMessage">
+   <result name="success">/msg.jsp</result>
+   <result name="error">/msg.jsp</result>
+   <result name="input">/msg.jsp</result>
+   </action>
+   
+   <action name ="fileUpload" class ="com.test.action.FileUploadAction" method="uploadImage"> 
+            <interceptor-ref name ="fileUploadStack" /> 
+            <result name ="success" >/showUpload.jsp </result> 
+            <result name ="error" >/msg.jsp </result> 
+            <result name ="login" >/login.jsp </result> 
+   </action> 
+   
+    <action name ="uploadPhoto" class ="com.test.action.FileUploadAction" method="uploadPhoto"> 
+            <interceptor-ref name ="fileUploadStack" /> 
+            <result name ="success" >/showUpload.jsp </result> 
+            <result name ="error" >/msg_a.jsp </result> 
+            <result name ="login" >/login.jsp </result> 
+   </action> 
+   </package>
+
+</struts>
+
+
+
+
